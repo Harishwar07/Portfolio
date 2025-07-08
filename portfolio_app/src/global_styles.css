@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors - WCAG AA Compliant */
+  --primary: #1E40AF;        /* Blue 700 - 4.5:1 contrast on white */
+  --primary-light: #3B82F6;  /* Blue 500 - for backgrounds */
+  --primary-dark: #1E3A8A;   /* Blue 800 - high contrast */
+  --primary-darker: #1E293B; /* Slate 800 - maximum contrast */
+  
+  /* Secondary Colors */
+  --secondary: #7C3AED;      /* Violet 600 - 4.5:1 contrast */
+  --secondary-light: #A855F7; /* Purple 500 - for accents */
+  --secondary-dark: #5B21B6; /* Violet 800 - high contrast */
+  
+  /* Accent Colors */
+  --accent: #0F766E;         /* Teal 700 - 4.5:1 contrast */
+  --accent-light: #14B8A6;   /* Teal 500 - for highlights */
+  --accent-dark: #134E4A;    /* Teal 800 - high contrast */
+  
+  /* Status Colors - All WCAG AA Compliant */
+  --success: #166534;        /* Green 800 - 7:1 contrast */
+  --success-light: #22C55E;  /* Green 500 - for backgrounds */
+  --warning: #A16207;        /* Amber 700 - 4.5:1 contrast */
+  --warning-light: #F59E0B;  /* Amber 500 - for backgrounds */
+  --error: #DC2626;          /* Red 600 - 4.5:1 contrast */
+  --error-light: #EF4444;    /* Red 500 - for backgrounds */
+  
+  /* Neutral Colors - Optimized for Readability */
+  --gray-50: #F8FAFC;        /* Slate 50 - lightest background */
+  --gray-100: #F1F5F9;       /* Slate 100 - light background */
+  --gray-200: #E2E8F0;       /* Slate 200 - borders */
+  --gray-300: #CBD5E1;       /* Slate 300 - disabled states */
+  --gray-400: #94A3B8;       /* Slate 400 - placeholders */
+  --gray-500: #64748B;       /* Slate 500 - secondary text */
+  --gray-600: #475569;       /* Slate 600 - body text (4.5:1) */
+  --gray-700: #334155;       /* Slate 700 - headings (7:1) */
+  --gray-800: #1E293B;       /* Slate 800 - dark headings (12:1) */
+  --gray-900: #0F172A;       /* Slate 900 - maximum contrast (16:1) */
+  
+  /* High Contrast Text Colors */
+  --text-primary: #0F172A;    /* Slate 900 - primary text (16:1 contrast) */
+  --text-secondary: #334155;  /* Slate 700 - secondary text (7:1 contrast) */
+  --text-tertiary: #475569;   /* Slate 600 - tertiary text (4.5:1 contrast) */
+  --text-muted: #64748B;      /* Slate 500 - muted text (3.5:1 contrast - large text only) */
+  
+  /* Background Colors */
+  --bg-primary: #FFFFFF;      /* Pure white */
+  --bg-secondary: #F8FAFC;    /* Slate 50 - subtle background */
+  --bg-tertiary: #F1F5F9;     /* Slate 100 - card backgrounds */
+  
+  /* Interactive States */
+  --link-color: #1E40AF;      /* Primary blue - 4.5:1 contrast */
+  --link-hover: #1E3A8A;      /* Darker blue on hover */
+  --link-visited: #7C3AED;    /* Purple for visited links */
+  
+  /* Focus States - High Visibility */
+  --focus-ring: #3B82F6;      /* Blue 500 - visible focus indicator */
+  --focus-ring-offset: #FFFFFF; /* White offset for focus rings */
+  
+  /* Legacy Variables for Compatibility */
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #E2E8F0 0%, #F1F5F9 50%, #F8FAFC 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid var(--gray-200);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--gray-200);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-height: 44px; /* Touch target accessibility */
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--primary);
+  border-radius: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-height: 44px; /* Touch target accessibility */
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+.card {
+  background: var(--bg-primary);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 0.6s ease forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* Particles container */
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
